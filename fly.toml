@@ -1,0 +1,23 @@
+app = "jeansantossouza-n8n"
+
+primary_region = "gru"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  N8N_PORT = "5678"
+  N8N_LISTEN_ADDRESS = "0.0.0.0"
+  N8N_PROTOCOL = "https"
+  NODE_ENV = "production"
+  GENERIC_TIMEZONE = "America/Sao_Paulo"
+
+[http_service]
+  internal_port = 5678
+  force_https = true
+  auto_start_machines = true
+  auto_stop_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  size = "shared-cpu-1x"
